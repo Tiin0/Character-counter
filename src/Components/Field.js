@@ -97,7 +97,7 @@ class Field extends React.Component {
     render() {
         return (
             <div className="flex flex-col items-center w-full h-auto ">
-                <h1 className='text-5xl font-extrabold max-w-[14ch] text-center leading-[55px] max-sm:text-4xl max-mm:text-[40px] ' >Analyzing Your text in real-time</h1>
+                <h1 className='text-5xl font-extrabold max-w-[14ch] text-center leading-[55px] max-sm:text-4xl max-mm:text-[40px] ' >Analyzing Your text in real-time.</h1>
                 <textarea
                     className=" w-full h-[250px] mt-[30px] rounded-[25px] bg-slate-200 pl-4 pt-2 max-sm:w-[90%] min-lg:h-[350px] "
                     value={this.state.newText}
