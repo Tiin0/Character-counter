@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .dark {
-  @apply bg-black
+  @apply bg-[#1f1f1f]
 }
 
 .dark h1,

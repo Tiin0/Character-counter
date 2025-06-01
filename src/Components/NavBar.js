@@ -33,7 +33,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="h-[100px] w-full flex items-center justify-between px-6">
-                <div className="w-[200px] max-sm:w-[150px">
+                <div className="w-[200px] max-sm:w-[150px]">
                     <img 
                         src={this.state.isDark ? logo2 : logo} 
                         alt="logo" 
