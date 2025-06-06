@@ -3,10 +3,10 @@ import Data from "./Data";
 import CharDensity from "./CharDensity";
 
 
-class Field extends React.Component {
+class Field extends React.Component {  // Si dichiara il componente
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = {  // Si dichiarano le variabili
             newText : '',
             text: '',
             numChar: Infinity,
@@ -17,12 +17,12 @@ class Field extends React.Component {
             excludeSpace: false,
             charLimit: false
         };
-        this.changeTime = this.changeTime.bind(this);
-        this.handleKeyPressed = this.handleKeyPressed.bind(this);
+        this.changeTime = this.changeTime.bind(this); 
+        this.handleKeyPressed = this.handleKeyPressed.bind(this);  
         this.updateDensity = this.updateDensity.bind(this);
     }
 
-    changeTime() {
+    changeTime() {   // Aggiorna il tempo di lettura ogni volta che viene inserito un carattere oppure venga spuntata la checkbox di non contare gli spazzi
         const char = this.state.newText;
         const numChar = this.state.numChar;
 
@@ -42,7 +42,7 @@ class Field extends React.Component {
         });
     }
 
-    handleKeyPressed() {
+    handleKeyPressed() {  // Aggiorna l'elenco di caratteri ogni volta che ne viene inserito uno
         const newText = this.state.newText;
         const oldText = this.state.text;
 
@@ -77,7 +77,7 @@ class Field extends React.Component {
     }
     
 
-    updateDensity() {
+    updateDensity() { // Riordina l'elenco in modo che le lettere siano disposte dalla piu presente a quella meno
         let letters = [...this.state.mappedLetters.entries()].sort((a,b) => b[1] - a[1]);
         this.setState({
             orderedLetters : letters
@@ -94,7 +94,7 @@ class Field extends React.Component {
         }
     }
 
-    render() {
+    render() { // Codice da mostrare nella pagina
         return (
             <div className="flex flex-col items-center w-full h-auto ">
                 <h1 className='text-5xl font-extrabold max-w-[14ch] text-center leading-[55px] max-sm:text-4xl max-mm:text-[40px] ' >Analyzing Your text in real-time.</h1>
@@ -139,7 +139,7 @@ class Field extends React.Component {
                     </div>  
                     <h3 className="ml-auto mr-[20px] font-semibold">Reading time: {this.state.time}</h3>
                 </div>
-                <Data totChar={this.state.text.length} totWords={this.state.words} totSentence={this.state.mappedLetters.get('.') || 0} />
+                <Data totChar={this.state.text.length} totWords={this.state.words} totSentence={this.state.mappedLetters.get('.') || 0} /> 
                 <CharDensity values={this.state.orderedLetters}/>
             </div>
         );

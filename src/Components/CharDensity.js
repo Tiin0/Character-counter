@@ -1,7 +1,7 @@
 import React from "react";
 
-class CharDensity extends React.Component {
-    constructor(props) {
+class CharDensity extends React.Component { // Viene dichiarato il componente
+    constructor(props) { // vengono dichiarate le variabili
         super(props);
         this.state = {
             char: 5,
@@ -9,7 +9,7 @@ class CharDensity extends React.Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount() { // Ogni volta che vengono aggiunti nuovi caratteri li aggiorna nella variabile
         this.updateDisplayedValues(this.state.char);
     }
 
@@ -20,11 +20,11 @@ class CharDensity extends React.Component {
     }
 
     updateDisplayedValues(charCount) {
-        const filteredValues = this.props.values.filter(([letter]) => letter !== ' ');
-        const displayedValues = [...filteredValues.slice(0, charCount)];
+        const filteredValues = this.props.values.filter(([letter]) => letter !== ' '); // vengono filtrate le lettere in modo che li spazzi non vengano contati
+        const displayedValues = [...filteredValues.slice(0, charCount)]; // Mostra solo il numero di lettere scelto dall'utente
 
         while (displayedValues.length < charCount) {
-            displayedValues.push(['...', 0]);
+            displayedValues.push(['...', 0]); // Se non ci sono lettere viene mostrato ... al loro posto
         }
 
         this.setState({ displayedValues });
@@ -35,7 +35,7 @@ class CharDensity extends React.Component {
         this.setState({ char: value });
     };
 
-    render() {
+    render() { // Codice da mostrare
         return (
             <div className="mt-[50px] w-full mb-[50px] max-sm:w-[90%]">
                 {this.state.displayedValues.map(([letter, count], index) => (

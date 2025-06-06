@@ -3,8 +3,8 @@ import logo from '../Images/logo.png';
 import logo2 from '../Images/logo-2.png';
 import light from '../Images/light.png';
 
-class NavBar extends React.Component {
-    constructor(props) {
+class NavBar extends React.Component { // Viene dichiarato il componente
+    constructor(props) { // Vengono dichiarate le variabili
         super(props);
         this.changeLightMode = this.changeLightMode.bind(this);
         this.state = {
@@ -25,12 +25,12 @@ class NavBar extends React.Component {
             this.observer.disconnect();
         }
     }
-
-    changeLightMode() {
+ 
+    changeLightMode() { // Qiando l'icono della lampadina viene premuta, cambia il tema da chiaro a scuro
        document.body.classList.toggle('dark');
     }
 
-    render() {
+    render() { // Codice da mostrare nella pagina
         return (
             <div className="h-[100px] w-full flex items-center justify-between px-6">
                 <div className="w-[200px] max-sm:w-[150px]">
